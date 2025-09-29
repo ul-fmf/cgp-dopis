@@ -22,6 +22,12 @@
 \fontsize{9pt}{9pt}\selectfont
 \renewcommand{\baselinestretch}{1.1667}
 
+% Če želite polje za digitalni podpis, si naložite paket digsig.sty
+% (npr. z http://home.htp-tel.de/lottermose2/tex/dist/digsig.sty)
+% odkomentirajte spodnji dve vrstici, ter spodnje vrstice v podpisu.
+\PassOptionsToPackage{hidelinks}{hyperref}
+\usepackage{digsig}
+
 \usepackage[
     top=14mm,
     left=34mm,
@@ -141,10 +147,22 @@ S spoštovanjem,
     Pripravil/a \\
     \textbf{Ime in priimek} \\
     \textit{Naziv}
+    % Če želite polje za digitalni podpis, zgoraj vklopite paket
+    % in odkomentirajte spodnje štiri vrstice.
+    % \\
+    % \begin{Form}
+    % \digsigfield{5cm}{2cm}{Podpis1}
+    % \end{Form}
 \end{minipage}%
 \begin{minipage}[b]{70mm}%
     prof.~dr.~\textbf{Gregor Majdič} \\
     \textit{Rektor}
+    % Če želite polje za digitalni podpis, zgoraj vklopite paket
+    % in odkomentirajte spodnje štiri vrstice.
+    % \\
+    % \begin{Form}
+    % \digsigfield{5cm}{2cm}{Podpis2}
+    % \end{Form}
 \end{minipage}%
 
 \end{document}
