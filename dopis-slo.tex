@@ -1,13 +1,22 @@
 \documentclass[a4paper]{article}
 \usepackage[slovene]{babel}
 
-% Arial pisava
+% Če za prevajanje uporabljate XeLaTeX oz LuaLaTeX,
+% se bo samodejno uporabila pisava Univerza Sans,
+% oziroma Arial, če slednje nimate.
+\usepackage{iftex}
+\ifpdftex
 \usepackage{helvet}
 \renewcommand{\familydefault}{\sfdefault}
 \usepackage[utf8]{inputenc}
-% Če imate XeLaTeX oz LuaLaTeX zakomentirajte zgornje tri vrstici in uporabite Univerza Sans 
-% \usepackage{fontspec}
-% \setmainfont{Univerza Sans}
+\else
+\usepackage{fontspec}
+\IfFontExistsTF{Univerza Sans}{%
+  \setmainfont{Univerza Sans}
+}{
+  \setmainfont{Arial}
+}
+\fi
 
 % velikost pisave
 \fontsize{9pt}{9pt}\selectfont
